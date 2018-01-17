@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.antonio.filaclientes.MainActivity"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark">
+
+
+
+    <LinearLayout
+        android:padding="9dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sua posição na fila: "
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+            android:id="@+id/btnEntrarFila"
+            android:layout_marginRight="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            app:fabIcon="@drawable/ic_add_black_24dp"
+            app:fabIconColor="#000"
+            app:fabTextAllCaps="true"
+            app:fabTextColor="#000"
+            app:fabText="Entrar na fila"
+            />
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+            android:id="@+id/btnSairFila"
+            android:layout_marginRight="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            app:fabIcon="@drawable/ic_clear_black_24dp"
+            app:fabIconColor="#000"
+            app:fabTextAllCaps="true"
+            app:fabTextColor="#000"
+            app:fabText="Sair da fila"
+            />
+
+     </LinearLayout>
+
+
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="procure chegar com 30 min de antecedência"
+        android:textColor="@color/textColor"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+
+
+</LinearLayout>

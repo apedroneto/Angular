@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FilaClientes</string>
+    <string name="tela_login">FilaCLientes</string>
+    <string name="tela_registro">FilaClientes - Registro</string>
+    <string name="tela_esqueci_senha">FilaClientes - Esqueci Senha</string>
+
+    <!--Texts Tela Login-->
+    <string name="text_usuario">Usuário</string>
+    <string name="text_senha">Senha</string>
+    <string name="text_logar">Logar</string>
+    <string name="text_registrar">Registrar</string>
+    <string name="text_esqueci_senha">Esqueci a senha</string>
+
+    <!--Texts Tela Registrar-->
+    <string name="text_nome_completo">Nome Completo</string>
+    <string name="text_email">Email</string>
+    <string name="text_cpf">CPF</string>
+    <string name="text_senha_novamente">Senha Novamente</string>
+
+    <!--Texts Tela Recuperar-->
+    <string name="text_recuperar_senha">Recuperar</string>
+    <string name="text_mensagem_enviada">Uma nova senha foi enviada para seu email</string>
+</resources>

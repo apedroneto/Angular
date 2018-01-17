@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark">
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="@color/textColor"
+        app:mtf_image="@drawable/ic_email_black_24dp">
+
+        <EditText
+            android:id="@+id/edtEmailRecuperar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_email"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:id="@+id/btnRecuperarSenha"
+        android:layout_marginRight="7dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        app:fabIcon="@drawable/ic_new_releases_black_24dp"
+        app:fabIconColor="#000"
+        app:fabTextAllCaps="true"
+        app:fabTextColor="#000"
+        app:fabText="@string/text_recuperar_senha"
+        />
+
+
+</LinearLayout>

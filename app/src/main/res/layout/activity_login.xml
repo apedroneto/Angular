@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#363334">
+
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_gravity="center"
+        android:elevation="20dp"/>
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="@color/textColor"
+        app:mtf_image="@drawable/user_84308">
+
+        <EditText
+            android:id="@+id/edtUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_usuario"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="25sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="@color/textColor"
+        app:mtf_image="@drawable/password_3715">
+
+
+        <com.maksim88.passwordedittext.PasswordEditText
+            android:id="@+id/edtSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:hint="@string/text_senha"
+            />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+
+
+
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+            android:id="@+id/btnLogar"
+            android:layout_marginRight="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabIcon="@drawable/check_outline"
+            app:fabIconColor="#000"
+            app:fabTextAllCaps="true"
+            app:fabTextColor="#000"
+            app:fabText="@string/text_logar"
+            />
+
+        <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+            android:id="@+id/btnRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabIcon="@drawable/account_card_details"
+            app:fabIconColor="#000"
+            app:fabTextAllCaps="true"
+            app:fabTextColor="#000"
+            app:fabText="@string/text_registrar"
+            />
+
+
+
+    </LinearLayout>
+
+
+    <com.robertlevonyan.views.customfloatingactionbutton.FloatingActionButton
+        android:layout_marginTop="7dp"
+        android:id="@+id/btnEsqueciSenha"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabIcon="@drawable/comment_alert"
+        app:fabIconColor="#000"
+        app:fabTextAllCaps="true"
+        app:fabTextColor="#000"
+        app:fabText="@string/text_esqueci_senha"
+        />
+
+
+
+</LinearLayout>
