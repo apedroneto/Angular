@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "801023152111",
+    "firebase_url": "https://fila-7fa58.firebaseio.com",
+    "project_id": "fila-7fa58",
+    "storage_bucket": "fila-7fa58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801023152111:android:f61fe9a0b72d2ed8",
+        "android_client_info": {
+          "package_name": "com.example.antonio.filaclientes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "801023152111-92b1cjastpldkcufqjtm3nc8gfukjp95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaaX1dB9Sf3TgJcGKfT32Ie3I6B31iUyg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
