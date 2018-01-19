@@ -21,7 +21,36 @@
             android:padding="6dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sua posição na fila: "
+            android:text="Sua posicao na fila "
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/txtPosicaoUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="9dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total da fila "
             android:textColor="@color/textColor"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -31,7 +60,7 @@
             android:id="@+id/txtPosicao"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2"
+            android:text=""
             android:textColor="@color/textColor"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -39,6 +68,7 @@
 
 
     </LinearLayout>
+
 
 
     <LinearLayout
@@ -53,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:visibility="visible"
             android:textStyle="bold"
             app:fabIcon="@drawable/ic_add_black_24dp"
             app:fabIconColor="#000"

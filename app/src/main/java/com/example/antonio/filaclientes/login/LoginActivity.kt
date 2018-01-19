@@ -13,6 +13,7 @@ import com.example.antonio.filaclientes.helper.Menssages
 import com.example.antonio.filaclientes.helper.Preferencias
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import de.mateware.snacky.Snacky
 import kotlinx.android.synthetic.main.activity_login.*
 
 /**
@@ -41,8 +42,10 @@ class LoginActivity : AppCompatActivity() {
         return View.OnClickListener {
 
             if((edtUsuario.text.toString() == "" || edtSenha.text.toString() == "")) {
-                Menssages.toastMensage(this, getString(R.string.text_campos_vazios))
+                Menssages.snackBarError( edtSenha, getString(R.string.text_campos_vazios))
+
             } else {
+
                 validaLogin()
             }
 
@@ -57,10 +60,7 @@ class LoginActivity : AppCompatActivity() {
 
             val i: Intent = Intent(applicationContext, RegistrarActivity::class.java)
 
-            Menssages.toastMensage(this, "Tela Registrar")
-
             startActivity(i)
-
 
         }
 
@@ -92,11 +92,15 @@ class LoginActivity : AppCompatActivity() {
 
                 Menssages.toastMensage(this, getString(R.string.text_login_sucesso))
 
+                var preferencias : Preferencias = Preferencias()
+                preferencias.Preferencias(applicationContext)
+                preferencias.salvar(task.result.user.uid,"null", edtUsuario.text.toString())
+
 
                 startActivity(i)
             } else {
 
-                Menssages.toastMensage(this, getString(R.string.text_login_fail))
+                Menssages.snackBarError( edtSenha, getString(R.string.text_login_fail))
 
             }
         }

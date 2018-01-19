@@ -16,6 +16,7 @@ class Preferencias {
 
     val CHAVE_IDENTIFICADOR = "identificarUsuarioLogado"
     val CHAVE_NOME = "nomeUsuarioLogado"
+    val CHAVE_EMAIL = "emailUsuarioLogado"
 
     fun Preferencias(context: Context) {
         this.context = context
@@ -24,11 +25,12 @@ class Preferencias {
 
     }
 
-    fun salvar(identificadorUsuario : String, nomeUsuario : String) {
+    fun salvar(identificadorUsuario : String, nomeUsuario : String, email : String) {
 
         if(editor != null) {
             editor!!.putString(CHAVE_IDENTIFICADOR, identificadorUsuario)
             editor!!.putString(CHAVE_NOME, nomeUsuario)
+            editor!!.putString(CHAVE_NOME, email)
             editor!!.commit()
         }
 
@@ -46,11 +48,11 @@ class Preferencias {
 
 
 
-    fun setNome(nome : String) {
+    fun setEmail(email: String) {
 
         if(editor != null){
 
-            editor!!.putString(CHAVE_NOME, nome)
+            editor!!.putString(CHAVE_EMAIL, email)
 
         }
 
@@ -59,6 +61,12 @@ class Preferencias {
     fun getNome() : String {
 
         return preferences!!.getString(CHAVE_NOME, null)
+
+    }
+
+    fun getEmail() : String {
+
+        return preferences!!.getString(CHAVE_EMAIL, null)
 
     }
 

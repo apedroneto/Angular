@@ -23,7 +23,7 @@ class Usuario constructor(var id : String, var nome : String, var email : String
         mDatabase = FirebaseDatabase.getInstance()
         mDatabaseReference = mDatabase!!.reference!!.child("usuario")
 
-        mDatabaseReference!!.child(cpf).setValue(toMap())
+        mDatabaseReference!!.child(id).setValue(toMap())
     }
 
     fun toMap() : Map<String, String> {
@@ -33,7 +33,6 @@ class Usuario constructor(var id : String, var nome : String, var email : String
         hashMapUsuario.put("id", id)
         hashMapUsuario.put("nome", nome)
         hashMapUsuario.put("email", email)
-        hashMapUsuario.put("senha", senha)
         hashMapUsuario.put("cpf", cpf)
         hashMapUsuario.put("foto", foto)
 

@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.activity_registrar.*
  */
 class RegistrarActivity : AppCompatActivity() {
 
+    private var mAuth: FirebaseAuth? = null
     var autenticacao : FirebaseAuth? = null
     val configuracaoFirebase : ConfiguracaoFirebase = ConfiguracaoFirebase()
 
@@ -32,6 +33,8 @@ class RegistrarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registrar)
 
         btnRegistrarUser.setOnClickListener(btnRegistrarUserClick())
+
+        mAuth = FirebaseAuth.getInstance()
 
     }
 
@@ -46,18 +49,27 @@ class RegistrarActivity : AppCompatActivity() {
 
     fun cadastrarUsuario() {
 
+
+        if(edtSenhaRegistro.text.toString() != edtSenhaNovamente.text.toString()){
+            Menssages.snackBarError( edtSenhaNovamente, "Senhas nao compativeis")
+            return
+        }
+
+        if(edtEmail.text.toString() == "" || edtSenhaNovamente.text.toString() == ""){
+            Menssages.snackBarError( edtSenhaNovamente, getString(R.string.text_campos_vazios))
+            return
+        }
+
+
         autenticacao = configuracaoFirebase.getFireBaseAutentication()
         autenticacao!!.createUserWithEmailAndPassword(edtEmail.text.toString(), edtSenhaNovamente.text.toString()).addOnCompleteListener(this) { task ->
 
-            if (task.isSuccessful) {
+            if (task.isSuccessful ) {
 
                 Menssages.toastMensage(this, getString(R.string.text_usuario_cadastrado))
 
-                var identificadorUsuario = Base64Custom.codificarBase64(edtEmail.text.toString())
 
-                var usuarioFirebase : FirebaseUser = task.getResult().user
-
-                var usuario : Usuario = Usuario(identificadorUsuario,
+                var usuario : Usuario = Usuario(task.result.user.uid,
                         edtNomeUsuario.text.toString(),
                         edtEmail.text.toString(),
                         edtSenhaNovamente.text.toString(),
@@ -68,7 +80,7 @@ class RegistrarActivity : AppCompatActivity() {
 
                 var preferencias : Preferencias = Preferencias()
                 preferencias.Preferencias(applicationContext)
-                preferencias.salvar(identificadorUsuario, usuario.nome)
+                preferencias.salvar(task.result.user.uid, usuario.nome, usuario.email)
 
                 val i: Intent = Intent(applicationContext, LoginActivity::class.java)
 
@@ -81,7 +93,7 @@ class RegistrarActivity : AppCompatActivity() {
 
             } else {
 
-                Menssages.toastMensage(this, "error")
+                Menssages.snackBarError(edtCpf, "Error")
 
             }
         }
